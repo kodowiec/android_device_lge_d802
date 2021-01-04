@@ -2,5 +2,13 @@
  {
    "repository": "android_device_lge_g2-common",
    "target_path": "device/lge/g2-common"
+ },
+ {
+   "repository": "android_device_lineage_atv",
+   "target_path": "device/lineage/atv"
+ },
+ {
+   "repository": "android_device_google_atv",
+   "target_path": "device/google/atv"
  }
 ]
