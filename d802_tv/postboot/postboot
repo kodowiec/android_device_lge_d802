@@ -1,0 +1,8 @@
+#!/bin/sh
+svc bluetooth enable
+svc wifi enable
+wm size 1920x1080
+wm density 300
+#setprop persist.demo.rotationlock 0
+#settings put system user_rotation 1
+#content insert --uri content://settings/system --bind name:s:user_rotation --bind value:i:1

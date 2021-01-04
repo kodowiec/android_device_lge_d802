@@ -1,0 +1,7 @@
+
+service postboot /system/bin/postboot
+    user root
+    oneshot
+
+on property:sys.boot_completed=1
+    start postboot

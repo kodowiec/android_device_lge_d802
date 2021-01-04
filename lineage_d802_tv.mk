@@ -36,6 +36,11 @@ PRODUCT_PACKAGES += \
     LeanbackSampleApp \
     TvSampleLeanbackLauncher 
 
+
+include $(LOCAL_PATH)/d802_tv/postboot/postboot.mk
+
+BOARD_SEPOLICY_DIRS += \
+    $(LOCAL_PATH)/d802_tv/sepolicy
     
 include $(LOCAL_PATH)/d802_tv/props.mk
 

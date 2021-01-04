@@ -1,0 +1,1 @@
+/system/bin/postboot                  u:object_r:postboot_exec:s0

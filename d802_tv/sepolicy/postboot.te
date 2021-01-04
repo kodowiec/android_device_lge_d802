@@ -1,0 +1,37 @@
+# postboot service
+type postboot, domain;
+type postboot_exec, exec_type, file_type;
+
+#============= postboot ==============
+allow postboot activity_service:service_manager find;
+allow postboot baseband_prop:file { getattr execute open read execute_no_trans };
+allow postboot bluetooth:binder call;
+allow postboot bluetooth_manager_service:service_manager find;
+allow postboot dalvikcache_data_file:dir { search getattr };
+allow postboot default_prop:property_service set;
+allow postboot device_config_runtime_native_boot_prop:file { read open getattr execute execute_no_trans };
+allow postboot init:unix_stream_socket connectto;
+allow postboot property_socket:sock_file write;
+allow postboot self:capability sys_resource;
+allow postboot servicemanager:binder call;
+allow postboot settings_service:service_manager find;
+allow postboot shell_exec:file { read open getattr execute execute_no_trans };
+allow postboot system_file:file { lock execute_no_trans };
+allow postboot system_server:binder { call transfer };
+allow postboot tmpfs:file { read write getattr open execute };
+allow postboot toolbox_exec:file { getattr execute open read execute_no_trans };
+allow postboot wifi_service:service_manager find;
+allow postboot window_service:service_manager find;
+allow postboot vendor_toolbox_exec:file execute_no_trans;
+allow postboot zygote_exec:file { getattr execute open read execute_no_trans };
+allow postboot overlay_service:service_manager find;
+allow postboot package_service:service_manager find;
+
+#============= misc ==============
+allow shell postboot_exec:file { open read getattr execute execute_no_trans };
+allow servicemanager postboot:dir search;
+allow servicemanager postboot:file { read open };
+allow servicemanager postboot:process getattr;
+allow system_server postboot:binder { call transfer };
+
+init_daemon_domain(postboot)
